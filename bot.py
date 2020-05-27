@@ -5,7 +5,11 @@ token = '1221249595:AAENfywP9LTew9ciIcdM0ajHDtarBJNuG-k'
 bot = telebot.TeleBot(token)
 
 
-
+def log(message, answer):
+    print("\n ------")
+    print(datetime.datetime.now())
+    print("Сообщение от {0} {1}. (id = {2} \n ID сообщения: {4}".format(message.from_user.first_name, message.from_user.username, str(message.from_user.id), message.text, message.message_id))
+    print(answer)
 
 # @bot.message_handler(content_types=["text"])
 # def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
@@ -23,6 +27,7 @@ def help(message):
     1. Команда /help -Информация о возможностях
     2. Команда /menu -Возможности ботf'''
     bot.send_message(message.chat.id, text)
+    log(message, text)
 
 @bot.message_handler(commands=['menu'])
 def menu(message):
@@ -31,6 +36,7 @@ def menu(message):
     1. In developing
     2. In developing"""
     bot.send_message(message.chat.id, text)
+    log(message, text)
 
 
 
@@ -39,14 +45,12 @@ def answer_to_hi(message):
 
     if message.text == 'Привет':
         bot.send_message(message.chat.id, "Привет собака")
+        log(message.text)
 
     if message == 'Открыть меню':
+        pass
 
-def log(message, answer):
-    print("\n ------")
-    print(datetime.datetime.now())
-    print("Сообщение от {0} {1}. (id = {2} \n ID сообщения: {4}".format(message.from_user.first_name, message.from_user.username, str(message.from_user.id), message.text, message.message_id))
-    print(answer)
+
 
 
 
