@@ -20,8 +20,18 @@ def help(message):
     Добро пожаловать к нам в чат
     Функции бота:
     1. Команда /help -Информация о возможностях
-    2. Команда /menu -Возможности бота'''
+    2. Команда /menu -Возможности ботf'''
     bot.send_message(message.chat.id, text)
+
+@bot.message_handler(commands=['menu'])
+def menu(message):
+    text = """
+    Доступные команды бота
+    1. In developing
+    2. In developing"""
+    bot.send_message(message.chat.id, text)
+
+
 
 @bot.message_handler(content_types=["text"])
 def answer_to_hi(message):
