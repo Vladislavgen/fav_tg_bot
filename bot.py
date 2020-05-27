@@ -23,6 +23,23 @@ def answer_to_hi(message):
         bot.send_message(message.chat.id, "Привет собака")
 
 
+@bot.message_handler(comands=["help"])
+def help(message):
+    text = '''
+    Добро пожаловать к нам в чат
+    Функции бота:
+    1. Команда /help -Информация о возможностях
+    '''
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
      bot.polling(none_stop=True)
+
 
