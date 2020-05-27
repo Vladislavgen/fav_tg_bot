@@ -39,16 +39,6 @@ def menu(message):
     bot.send_message(message.chat.id, text)
     log(message, text)
 
-# не забудьте про from telebot import types
-@bot.message_handler(commands=["geophone"])
-def geophone(message):
-    # Эти параметры для клавиатуры необязательны, просто для удобства
-    keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
-    button_phone = types.KeyboardButton(text="Отправить номер телефона", request_contact=True)
-    button_geo = types.KeyboardButton(text="Отправить местоположение", request_location=True)
-    keyboard.add(button_phone, button_geo)
-    bot.send_message(message.chat.id, "Отправь мне свой номер телефона или поделись местоположением, жалкий человечишка!", reply_markup=keyboard)
-
 
 
 @bot.message_handler(content_types=["text"])
@@ -59,7 +49,14 @@ def answer_to_hi(message):
         log(message, "Привет собака")
 
     if message == 'Открыть меню':
-        pass
+        # Эти параметры для клавиатуры необязательны, просто для удобства
+        keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
+        button_phone = types.KeyboardButton(text="Отправить номер телефона", request_contact=True)
+        button_geo = types.KeyboardButton(text="Отправить местоположение", request_location=True)
+        keyboard.add(button_phone, button_geo)
+        bot.send_message(message.chat.id,
+                         "Отправь мне свой номер телефона или поделись местоположением, жалкий человечишка!",
+                         reply_markup=keyboard)
 
 
 
