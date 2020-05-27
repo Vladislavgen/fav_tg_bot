@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import telebot
 import datetime
+from telebot import types
 token = '1221249595:AAENfywP9LTew9ciIcdM0ajHDtarBJNuG-k'
 bot = telebot.TeleBot(token)
 
