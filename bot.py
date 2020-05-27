@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import telebot
 token = '1221249595:AAENfywP9LTew9ciIcdM0ajHDtarBJNuG-k'
 bot = telebot.TeleBot(token)
@@ -14,13 +13,6 @@ bot = telebot.TeleBot(token)
 #     print(message.chat.id)
 #     print(message.text)
 
-
-
-@bot.message_handler(content_types=["text"])
-def answer_to_hi(message):
-
-    if message.text == 'Привет':
-        bot.send_message(message.chat.id, "Привет собака")
 
 
 # Handle '/start' and '/help'
@@ -39,6 +31,12 @@ def help(message):
     1. Команда /help -Информация о возможностях
     '''
     bot.send_message(message.chat.id, text)
+
+@bot.message_handler(content_types=["text"])
+def answer_to_hi(message):
+
+    if message.text == 'Привет':
+        bot.send_message(message.chat.id, "Привет собака")
 
 
 
