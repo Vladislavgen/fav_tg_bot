@@ -51,7 +51,9 @@ def answer_to_hi(message):
     if message.text == 'меню':
         # Эти параметры для клавиатуры необязательны, просто для удобства
         text =  "Отправь мне свой номер телефона или поделись местоположением, жалкий человечишка!"
-        keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
+
+        keyboard = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
+
         button_phone = types.KeyboardButton(text="Отправить номер телефона", request_contact=True)
         button_geo = types.KeyboardButton(text="Отправить местоположение", request_location=True)
         keyboard.add(button_phone, button_geo)
