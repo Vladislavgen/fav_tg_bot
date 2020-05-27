@@ -18,7 +18,9 @@ def repeat_all_messages(message): # Название функции не игр�
 
 @bot.message_handler(content_types=["text"])
 def answer_to_hi(message):
-    bot.send_message(message.chat.id, message.text)
+
+    if message.text == 'Привет':
+        bot.send_message(message.chat.id, "Привет собака")
 
 
 if __name__ == '__main__':
