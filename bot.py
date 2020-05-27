@@ -45,7 +45,7 @@ def answer_to_hi(message):
 
     if message.text == 'Привет':
         bot.send_message(message.chat.id, "Привет собака")
-        log(message.text)
+        log(message, "Привет собака")
 
     if message == 'Открыть меню':
         pass
