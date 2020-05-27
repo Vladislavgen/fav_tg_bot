@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import telebot
+import datetime
 token = '1221249595:AAENfywP9LTew9ciIcdM0ajHDtarBJNuG-k'
 bot = telebot.TeleBot(token)
 
@@ -38,6 +39,15 @@ def answer_to_hi(message):
 
     if message.text == 'Привет':
         bot.send_message(message.chat.id, "Привет собака")
+
+    if message == 'Открыть меню':
+
+def log(message, answer):
+    print("\n ------")
+    print(datetime.datetime.now())
+    print("Сообщение от {0} {1}. (id = {2} \n ID сообщения: {4}".format(message.from_user.first_name, message.from_user.username, str(message.from_user.id), message.text, message.message_id))
+    print(answer)
+
 
 
 
