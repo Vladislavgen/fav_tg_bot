@@ -23,7 +23,7 @@ def answer_to_hi(message):
         bot.send_message(message.chat.id, "Привет собака")
 
 
-@bot.message_handler(comands=["help"])
+@bot.message_handler(comands=['help'])
 def help(message):
     text = '''
     Добро пожаловать к нам в чат
