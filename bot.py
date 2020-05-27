@@ -30,6 +30,7 @@ def help(message):
     Функции бота:
     1. Команда /help -Информация о возможностях
     '''
+    bot.send_message(message.chat.id, text)
 
 
 
