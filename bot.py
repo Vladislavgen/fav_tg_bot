@@ -76,6 +76,9 @@ def answer_to_hi(message):
          bot.send_message(message.chat.id, text, reply_markup=keyboard)
 
          log(message, text)
+
+    elif message.text == 'Добавить канал':
+        bot.send_message == "Добавляю канал"
 #
 #     elif message.text:
 #         bot.reply_to(message, "Сам {!s}".format(message.text))
