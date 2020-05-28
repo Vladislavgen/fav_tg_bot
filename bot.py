@@ -66,13 +66,14 @@ def answer_to_hi(message):
 
 
     elif str(message.text).title() == 'Бот':
+         text = "TEXT"
          keyboard = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
          button_channel1 = types.KeyboardButton(text="Добавить канал")
          button_channel2 = types.KeyboardButton(text="Убрать канал")
          button_info = types.KeyboardButton(text="Информация")
          button_list = types.KeyboardButton(text="Список каналов")
          keyboard.add(button_channel1, button_channel2, button_info, button_list)
-         bot.send_message(message.chat.id, reply_markup=keyboard)
+         bot.send_message(message.chat.id, text, reply_markup=keyboard)
 
          log(message)
 #
