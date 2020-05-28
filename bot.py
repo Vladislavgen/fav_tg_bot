@@ -80,6 +80,22 @@ def answer_to_hi(message):
     elif message.text == 'Добавить канал':
         text = "Добавил канал"
         bot.send_message(message.chat.id, text, message)
+        log(message, text)
+
+    elif message.text == 'Убрать канал':
+        text = "Убрал канал"
+        bot.send_message(message.chat.id, text, message)
+        log(message, text)
+
+    elif message.text == 'Информация':
+        text = "Предоставляю ИНФОРМАЦИЮ"
+        bot.send_message(message.chat.id, text, message)
+        log(message, text)
+
+    elif message.text == 'Список каналов':
+        text = "1)2ch/Двач"
+        bot.send_message(message.chat.id, text, message)
+        log(message, text)
 #
 #     elif message.text:
 #         bot.reply_to(message, "Сам {!s}".format(message.text))
