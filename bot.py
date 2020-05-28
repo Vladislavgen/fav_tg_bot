@@ -64,22 +64,35 @@ def answer_to_hi(message):
         #Логирование
         log(message, text)
 
-    if message.text:
-        bot.reply_to(message, "Сам {!s}".format(message.text))
-        log(message, message.text)
 
+     elif str(message.text).title() == 'Бот':
+         keyboard = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
+         button_channel1 = types.KeyboardButton(text="Добавить канал")
+         button_channel2 = types.KeyboardButton(text="Убрать канал")
+         button_info = types.KeyboardButton(text="Информация")
+         button_list = types.KeyboardButton(text="Список каналов")
+         keyboard.add(button_channel1, button_channel2, button_info, button_list)
+         bot.send_message(message.chat.id, reply_markup=keyboard)
 
-
-
-
-
-
-@bot.edited_message_handler(func=lambda message: True)
-def edit_message(message):
-    bot.edit_message_text(chat_id=message.chat.id,
-                          text= "Сам {!s}".format(message.text),
-                          message_id=message.message_id + 1)
-    log(message, message.text)
+         log(message)
+#
+#     elif message.text:
+#         bot.reply_to(message, "Сам {!s}".format(message.text))
+#         log(message, message.text)
+#
+#
+#
+#
+#
+#
+#
+#
+# @bot.edited_message_handler(func=lambda message: True)
+# def edit_message(message):
+#     bot.edit_message_text(chat_id=message.chat.id,
+#                           text= "Сам {!s}".format(message.text),
+#                           message_id=message.message_id + 1)
+#     log(message, message.text)
 
 
 
