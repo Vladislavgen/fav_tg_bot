@@ -78,7 +78,8 @@ def answer_to_hi(message):
          log(message, text)
 
     elif message.text == 'Добавить канал':
-        bot.send_message == "Добавляю канал"
+        text = "Добавил канал"
+        bot.send_message(message, text)
 #
 #     elif message.text:
 #         bot.reply_to(message, "Сам {!s}".format(message.text))
