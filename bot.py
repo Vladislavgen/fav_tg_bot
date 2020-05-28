@@ -9,7 +9,7 @@ bot = telebot.TeleBot(token)
 def log(message, answer):
     print("\n ------")
     print(datetime.datetime.now())
-    print("Сообщение от {0} {1}. (id = {2} \n ID сообщения: {4}".format(message.from_user.first_name, message.from_user.username, str(message.from_user.id), message.text, message.message_id))
+    print("Сообщение от {0} {1}. (id = {2} \n ID сообщения: {4} \n текст сообщения:{3} \n ID чата {5}".format(message.from_user.first_name, message.from_user.username, str(message.from_user.id), message.text, message.message_id, message.chat.id))
     print(answer)
 
 # @bot.message_handler(content_types=["text"])
