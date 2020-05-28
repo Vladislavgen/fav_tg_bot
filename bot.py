@@ -65,7 +65,7 @@ def answer_to_hi(message):
         log(message, text)
 
 
-     elif str(message.text).title() == 'Бот':
+    elif str(message.text).title() == 'Бот':
          keyboard = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
          button_channel1 = types.KeyboardButton(text="Добавить канал")
          button_channel2 = types.KeyboardButton(text="Убрать канал")
