@@ -78,9 +78,9 @@ def answer_to_hi(message):
          log(message, text)
 
     elif message.text == 'Добавить канал':
-        text = message.from_user.first_name + " Добавил канал"
+        text = "Добавил канал"
         bot.send_message(message.chat.id, text, message)
-        bot.send_message("879499877", text, message)
+        bot.send_message(message.from_user.first_name + "879499877", text, message)
         log(message, text)
 
     elif message.text == 'Убрать канал':
