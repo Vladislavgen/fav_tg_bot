@@ -80,8 +80,8 @@ def answer_to_hi(message):
     elif message.text == 'Добавить канал':
         text = "Добавил канал"
         text_for_admin = message.from_user.first_name + "Добавил канал"
-        bot.send_message(message.chat.id, text, text_for_admin)
-        bot.send_message("879499877", text, text_for_admin)
+        bot.send_message(message.chat.id, text)
+        bot.send_message("879499877", text_for_admin)
         log(message, text,)
 
     elif message.text == 'Убрать канал':
