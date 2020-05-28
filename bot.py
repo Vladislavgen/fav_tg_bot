@@ -73,17 +73,13 @@ def answer_to_hi(message):
 
 
 
-@bot.message_handler(func=lambda message: True)
-def any_message(message):
-
-
 
 @bot.edited_message_handler(func=lambda message: True)
 def edit_message(message):
     bot.edit_message_text(chat_id=message.chat.id,
                           text= "Сам {!s}".format(message.text),
                           message_id=message.message_id + 1)
-    log(message)
+    log(message, message.text)
 
 
 
