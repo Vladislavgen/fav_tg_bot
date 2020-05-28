@@ -64,11 +64,18 @@ def answer_to_hi(message):
         #Логирование
         log(message, text)
 
+    if message.text:
+        bot.reply_to(message, "Сам {!s}".format(message.text))
+        log(message, message.text)
+
+
+
+
 
 
 @bot.message_handler(func=lambda message: True)
 def any_message(message):
-    bot.reply_to(message, "Сам {!s}".format(message.text))
+
 
 
 @bot.edited_message_handler(func=lambda message: True)
