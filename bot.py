@@ -51,14 +51,32 @@ def answer_to_hi(message):
     if message.text == 'меню':
         # Эти параметры для клавиатуры необязательны, просто для удобства
         text =  "Отправь мне свой номер телефона или поделись местоположением, жалкий человечишка!"
-
+        #Создаем объект клавиатура задем размер и автоматический re-size по ширине
         keyboard = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
-
+        #Кнопка номер один: номер телефона
         button_phone = types.KeyboardButton(text="Отправить номер телефона", request_contact=True)
+        #Кнопка номер два: Местоположение пользователя
         button_geo = types.KeyboardButton(text="Отправить местоположение", request_location=True)
+        #Добавление кнопок в объект клавиатура
         keyboard.add(button_phone, button_geo)
+        #Отправка сообщения с созданной ранее клавиатурой
         bot.send_message(message.chat.id, text, reply_markup=keyboard)
+        #Логирование
         log(message, text)
+
+
+
+@bot.message_handler(func=lambda message: True)
+def any_message(message):
+    bot.reply_to(message, "Сам {!s}".format(message.text))
+
+
+@bot.edited_message_handler(func=lambda message: True)
+def edit_message(message):
+    bot.edit_message_text(chat_id=message.chat.id,
+                          text= "Сам {!s}".format(message.text),
+                          message_id=message.message_id + 1)
+    log(message)
 
 
 
