@@ -75,7 +75,7 @@ def answer_to_hi(message):
          keyboard.add(button_channel1, button_channel2, button_info, button_list)
          bot.send_message(message.chat.id, text, reply_markup=keyboard)
 
-         log(message)
+         log(message, text)
 #
 #     elif message.text:
 #         bot.reply_to(message, "Сам {!s}".format(message.text))
