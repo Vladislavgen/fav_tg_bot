@@ -42,6 +42,12 @@ def menu(message):
 @bot.message_handler(commands=['channel'])
 def channel(message):
     print(message.text)
+    raw_message = str(message.text).split()
+    print(raw_message)
+    command = ""
+    forward_to = ""
+    forward_from = ""
+    action = ""
     bot.send_message(message.chat.id, "Подписался")
     log(message, "Подписался")
 
