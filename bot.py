@@ -44,10 +44,12 @@ def channel(message):
     print(message.text)
     raw_message = str(message.text).split()
     print(raw_message)
-    command = ""
-    forward_to = ""
-    forward_from = ""
-    action = ""
+    command = raw_message[0]
+    forward_to = raw_message[1]
+    forward_from = raw_message[3]
+    action = raw_message[2]
+
+    bot.forward_message(forward_to, forward_from, "57")
     bot.send_message(message.chat.id, "Подписался")
     log(message, "Подписался")
 
