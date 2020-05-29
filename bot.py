@@ -26,7 +26,7 @@ def help(message):
     Добро пожаловать к нам в чат
     Функции бота:
     1. Команда /help -Информация о возможностях
-    2. Команда /menu -Возможности ботf'''
+    2. Команда /menu -Возможности бот'''
     bot.send_message(message.chat.id, text)
     log(message, text)
 
@@ -39,6 +39,11 @@ def menu(message):
     bot.send_message(message.chat.id, text)
     log(message, text)
 
+@bot.message_handler(commands=['channel'])
+def channel(message):
+    print(message.text)
+    bot.send_message(message.chat.id, "Подписался")
+    log(message, "Подписался")
 
 
 @bot.message_handler(content_types=["text"])
