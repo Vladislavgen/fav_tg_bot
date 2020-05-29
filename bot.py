@@ -54,6 +54,85 @@ def channel(message):
     log(message, "Подписался")
 
 
+@bot.message_handler(commands=['activate'])
+def activate(message):
+    text = "Activate redirection"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['list'])
+def lixt(message):
+    text = "List redirection"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['remove'])
+def remove(message):
+    text = "remove redirection"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['deactivate'])
+def deactivate(message):
+    text = "deactivate redirection"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['me'])
+def me(message):
+    text = "account information"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['filter'])
+def filter(message):
+    text = "set message filter"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['filters'])
+def filters(message):
+    text = "list filters applied to a redirection"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['transformation'])
+def transformation(message):
+    text = "automatically replace words/phrases in reposted messages "
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['transformations'])
+def transformations(message):
+    text = "list transformations applied to a redirection"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['add_gateway'])
+def add_gateway(message):
+    text = "setup redirections from channels you don't have invitation link for"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['remove_gateway'])
+def add_gateway(message):
+    text = "disconnect Telegram Account from the bot"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['chats'])
+def add_gateway(message):
+    text = "get numerical ids of channels/groups/bots/people"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+@bot.message_handler(commands=['clone'])
+def add_gateway(message):
+    text = "clone chat history"
+    bot.send_message(message.chat.id, text)
+    log(message, text)
+
+
 @bot.message_handler(content_types=["text"])
 def answer_to_hi(message):
 
