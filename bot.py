@@ -5,6 +5,7 @@ from telebot import types
 token = '1221249595:AAENfywP9LTew9ciIcdM0ajHDtarBJNuG-k'
 bot = telebot.TeleBot(token)
 countries = {'Россия' : 'Москва', 'Белорусь' : 'Минск', "США" : "Вашингтон", "Англия" : "Лондон"}
+countries_keys = list(countries.keys())
 
 def log(message, answer):
     print("\n ------")
@@ -191,11 +192,10 @@ def answer_to_hi(message):
         bot.send_message(message.chat.id, text, message)
         log(message, text)
 
-    elif message.text == 'Россия':
+    elif message.text in countries_keys:
         text = f"Страна: {message.text} \nСтолица: " + countries.get(message.text)
         bot.send_message(message.chat.id, text, message)
         log(message, text)
-
 
 #
 #     elif message.text:
