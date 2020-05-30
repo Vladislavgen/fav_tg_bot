@@ -192,7 +192,7 @@ def answer_to_hi(message):
         log(message, text)
 
     elif message.text == 'Россия':
-        text = "Столица: " + countries.get(message.text)
+        text = f"Страна:{message.text} \nСтолица: " + countries.get(message.text)
         bot.send_message(message.chat.id, text, message)
         log(message, text)
 
