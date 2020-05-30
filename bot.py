@@ -4,7 +4,7 @@ import datetime
 from telebot import types
 token = '1221249595:AAENfywP9LTew9ciIcdM0ajHDtarBJNuG-k'
 bot = telebot.TeleBot(token)
-
+countries = {'Россия' : 'Москва', 'Белорусь' : 'Минск', "США" : "Вашингтон", "Англия" : "Лондон"}
 
 def log(message, answer):
     print("\n ------")
@@ -190,6 +190,13 @@ def answer_to_hi(message):
         text = "1)2ch/Двач"
         bot.send_message(message.chat.id, text, message)
         log(message, text)
+
+    elif message.text == 'Россия':
+        text = "Столица: " + countries.get(message.text)
+        bot.send_message(message.chat.id, text, message)
+        log(message, text)
+
+
 #
 #     elif message.text:
 #         bot.reply_to(message, "Сам {!s}".format(message.text))
@@ -208,7 +215,6 @@ def answer_to_hi(message):
 #                           text= "Сам {!s}".format(message.text),
 #                           message_id=message.message_id + 1)
 #     log(message, message.text)
-
 
 
 
